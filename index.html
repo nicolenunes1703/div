@@ -5,22 +5,14 @@
     <title>Spider-Man - Home</title>
     <style>
         body { margin: 0; font-family: Arial, sans-serif; background: #0f1123; color: white; min-height: 1200px; }
-        
-        /* 1. FIXED - Menu fixo que não sai do topo */
-        .menu { position: fixed; top: 0; width: 100%; background: #b11313; padding: 15px; text-align: center; }
+        .menu { position: fixed; top: 0; width: 100%; background: #b11313; padding: 15px; text-align: center; z-index: 1000; }
         .menu a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        
-        /* 2. STATIC - Fluxo normal (distância do topo para o menu não cobrir o texto) */
         .conteudo { position: static; max-width: 800px; margin: 80px auto; padding: 20px; }
-        
-        /* 3. RELATIVE - Caixa base */
         .caixa-principal { position: relative; background: #1a1f38; padding: 30px; border-radius: 8px; }
-        
-        /* 4. ABSOLUTE - Fixado no canto superior direito da caixa-principal */
         .alerta { position: absolute; top: 10px; right: 10px; background: #e23636; padding: 5px; font-size: 12px; font-weight: bold; }
-        
-        /* 5. STICKY - Gruda na tela ao rolar a página para baixo */
         .aviso-sticky { position: -webkit-sticky; position: sticky; top: 60px; background: #213769; padding: 10px; margin: 20px 0; text-align: center; }
+        /* Estilização da nova imagem */
+        .img-home { display: block; width: 100%; max-height: 350px; object-fit: cover; border-radius: 5px; margin-top: 15px; }
     </style>
 </head>
 <body>
@@ -36,10 +28,11 @@
             <div class="alerta">ALERTA</div>
             <h1>Homem-Aranha</h1>
             <p>Este site usa todos os 5 posicionamentos do CSS.</p>
+            <img class="img-home" src="https://images.unsplash.com/photo-1635805737707-575885ab0820?w=800" alt="Homem-Aranha">
         </div>
 
         <div class="aviso-sticky">
-            📌 Barra Sticky: Role a página para ver este aviso grudar!
+             Barra Sticky: Role a página para ver este aviso grudar!
         </div>
 
         <p style="margin-top: 500px; color: #888;">(Fim da página. O menu continuou fixo lá no topo!)</p>
