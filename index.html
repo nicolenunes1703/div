@@ -2,63 +2,48 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Spider-Man Universe - Home</title>
+    <title>Spider-Man - Home</title>
     <style>
-        body { margin: 0; font-family: 'Arial', sans-serif; background: #0a0a14; color: #fff; min-height: 1100px; }
+        body { margin: 0; font-family: Arial, sans-serif; background: #0f1123; color: white; min-height: 1200px; }
         
-        /* 1. Posicionamento FIXED: Menu fixo no topo da tela */
-        .menu-fixo { position: fixed; top: 0; left: 0; width: 100%; background: #b11313; padding: 15px 0; z-index: 1000; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-        .menu-fixo a { color: white; margin: 0 20px; text-decoration: none; font-weight: bold; text-transform: uppercase; }
-        .menu-fixo a:hover { color: #213769; }
+        /* 1. FIXED - Menu fixo que não sai do topo */
+        .menu { position: fixed; top: 0; width: 100%; background: #b11313; padding: 15px; text-align: center; }
+        .menu a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
         
-        /* 2. Posicionamento STATIC: Fluxo normal do HTML */
-        .conteudo-principal { position: static; max-width: 900px; margin: 90px auto 20px auto; padding: 20px; }
+        /* 2. STATIC - Fluxo normal (distância do topo para o menu não cobrir o texto) */
+        .conteudo { position: static; max-width: 800px; margin: 80px auto; padding: 20px; }
         
-        /* 3. Posicionamento RELATIVE: Serve de referência para o absoluto interno */
-        .hero-banner { position: relative; background: #151e3d; height: 350px; border-radius: 8px; padding: 30px; display: flex; align-items: center; border: 2px solid #b11313; overflow: hidden; }
+        /* 3. RELATIVE - Caixa base */
+        .caixa-principal { position: relative; background: #1a1f38; padding: 30px; border-radius: 8px; }
         
-        /* 4. Posicionamento ABSOLUTE: Posicionado em relação ao .hero-banner */
-        .alerta-aranha { position: absolute; top: 20px; right: 20px; background: #e23636; color: white; padding: 5px 15px; font-weight: bold; border-radius: 20px; font-size: 12px; animation: pulse 1s infinite alternate; }
+        /* 4. ABSOLUTE - Fixado no canto superior direito da caixa-principal */
+        .alerta { position: absolute; top: 10px; right: 10px; background: #e23636; padding: 5px; font-size: 12px; font-weight: bold; }
         
-        /* 5. Posicionamento STICKY: Gruda no topo ao rolar a página */
-        .frase-sticky { position: -webkit-sticky; position: sticky; top: 60px; background: #213769; color: #fff; padding: 12px; text-align: center; font-style: italic; font-weight: bold; border-radius: 4px; margin: 25px 0; border-left: 5px solid #b11313; }
-        
-        .card-texto { background: #111122; padding: 20px; border-radius: 8px; margin-bottom: 20px; line-height: 1.6; }
-        footer { background: #05050a; padding: 15px; text-align: center; font-size: 14px; margin-top: 40px; }
-        @keyframes pulse { from { opacity: 0.6; } to { opacity: 1; } }
+        /* 5. STICKY - Gruda na tela ao rolar a página para baixo */
+        .aviso-sticky { position: -webkit-sticky; position: sticky; top: 60px; background: #213769; padding: 10px; margin: 20px 0; text-align: center; }
     </style>
 </head>
 <body>
 
-    <div class="menu-fixo">
+    <div class="menu">
         <a href="index.html">Home</a>
         <a href="trajes.html">Trajes</a>
         <a href="viloes.html">Vilões</a>
     </div>
 
-    <div class="conteudo-principal">
-        <div class="hero-banner">
-            <div class="alerta-aranha">SENTIDO ARANHA ATIVADO</div>
-            <div>
-                <h1 style="color: #e23636; font-size: 36px; margin: 0 0 10px 0;">Com grandes poderes vêm grandes responsabilidades</h1>
-                <p style="font-size: 18px; color: #ccc;">Explore o universo do amigão da vizinhança, suas tecnologias, aliados e os perigos que rondam Nova York.</p>
-            </div>
+    <div class="conteudo">
+        <div class="caixa-principal">
+            <div class="alerta">ALERTA</div>
+            <h1>Homem-Aranha</h1>
+            <p>Este site usa todos os 5 posicionamentos do CSS.</p>
         </div>
 
-        <div class="frase-sticky">
-            "Não importa quantas vezes eu seja derrubado, eu sempre me levanto." — Peter Parker
+        <div class="aviso-sticky">
+            📌 Barra Sticky: Role a página para ver este aviso grudar!
         </div>
 
-        <div class="card-texto">
-            <h2>O Amigão da Vizinhança</h2>
-            <p>Role esta página para testar os efeitos de posicionamento! O menu superior vermelho continuará fixo no topo (`fixed`), enquanto a barra azul com a frase célebre vai grudar logo abaixo dele (`sticky`) assim que passar por ela.</p>
-            <p style="height: 300px; background: #16162a; padding: 15px; border-radius: 5px; color: #888; margin-top: 20px;">[Espaço longo para simular rolagem de página e testar os posicionamentos do CSS...]</p>
-        </div>
+        <p style="margin-top: 500px; color: #888;">(Fim da página. O menu continuou fixo lá no topo!)</p>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Spider-Man Fanbase. Feito com fins educacionais.</p>
-    </footer>
 
 </body>
 </html>
